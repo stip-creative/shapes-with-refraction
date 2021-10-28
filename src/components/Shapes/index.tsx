@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo, useRef } from "react";
-import { Icosahedron, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
+import { Box, Icosahedron, OrthographicCamera } from "@react-three/drei";
 import { createPortal, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 

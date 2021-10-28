@@ -16,23 +16,23 @@ const PlaneComponent: FunctionComponent = () => {
         []
     );
 
-    // useFrame(({ clock }) => {
-    //     const materialRef = material?.current;
+    useFrame(({ clock }) => {
+        const materialRef = material?.current;
 
-    //     // add timer in shader
-    //     if (materialRef) {
-    //         materialRef.uniforms.u_time.value = clock.getElapsedTime();
-    //     }
-    // });
+        // add timer in shader
+        if (materialRef) {
+            materialRef.uniforms.u_time.value = clock.getElapsedTime();
+        }
+    });
 
     const texture = useTexture(
         "https://images.unsplash.com/photo-1559717642-b96cbea7bf56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
     );
 
     return (
-        <Plane args={[1, 1]} scale={[window.innerWidth, window.innerHeight, 1]} position={[0, 0, -20]}>
-            {/* <shaderMaterial ref={material} attach="material" vertexShader={vertexShader} fragmentShader={fragmentShader} uniforms={uniforms} /> */}
-            <meshBasicMaterial ref={material} attach="material" map={texture} />
+        <Plane args={[1, 1]} scale={[window.innerWidth, window.innerHeight, 1]} position={[0, 0, -500]}>
+            <shaderMaterial ref={material} attach="material" vertexShader={vertexShader} fragmentShader={fragmentShader} uniforms={uniforms} />
+            {/* <meshBasicMaterial ref={material} attach="material" map={texture} /> */}
         </Plane>
     );
 };
